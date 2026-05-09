@@ -1,74 +1,55 @@
 'use client';
 import { useState } from "react";
 
-const MOCK_ITINERARY = `SWAFARIS — YOUR KENYA JOURNEY
+const MOCK_ITINERARY = `SWAFARIS - YOUR KENYA JOURNEY
 
-7 Days · Maasai Mara & Amboseli · 2 Guests · Premium Tier
+7 Days - Maasai Mara and Amboseli - 2 Guests - Premium Tier
 
-─────────────────────────────────
-
-DAY 1 — ARRIVAL IN NAIROBI
+DAY 1 - ARRIVAL IN NAIROBI
 Accommodation: The Emakoko Lodge, Nairobi National Park
-Activity: Sundowner drive through Nairobi National Park — lions and giraffe against the city skyline
+Activity: Sundowner drive through Nairobi National Park
 Meals: Dinner at the lodge
-Est. Cost: $420/night
+Est. Cost: $420 per night
 
-─────────────────────────────────
-
-DAY 2 — FLY TO THE MAASAI MARA
+DAY 2 - FLY TO THE MAASAI MARA
 Accommodation: Angama Mara, Maasai Mara
-Flight: Nairobi Wilson → Keekorok airstrip (45 min)
-Activity: Afternoon game drive — big cat territory, resident cheetah coalition nearby
+Flight: Nairobi Wilson to Keekorok airstrip (45 min)
+Activity: Afternoon game drive - big cat territory
 Meals: All inclusive
-Est. Cost: $1,200/night per person
+Est. Cost: $1,200 per person per night
 
-─────────────────────────────────
-
-DAY 3 — MARA FULL DAY
+DAY 3 - MARA FULL DAY
 Accommodation: Angama Mara
 Activity: Full day game drive with picnic breakfast on the Mara plains
-Highlight: Cross the Mara River — wildebeest crossing season (July–October)
 Meals: All inclusive
 Est. Cost: Included
 
-─────────────────────────────────
-
-DAY 4 — MARA MORNING, FLY TO AMBOSELI
+DAY 4 - MARA MORNING, FLY TO AMBOSELI
 Accommodation: Tortilis Camp, Amboseli
-Flight: Keekorok → Amboseli airstrip (1 hr)
-Activity: Evening game drive — Amboseli's famous elephant herds with Kilimanjaro backdrop
+Flight: Keekorok to Amboseli airstrip (1 hr)
+Activity: Evening game drive - elephant herds with Kilimanjaro backdrop
 Meals: All inclusive
-Est. Cost: $890/night per person
+Est. Cost: $890 per person per night
 
-─────────────────────────────────
-
-DAY 5 — AMBOSELI FULL DAY
+DAY 5 - AMBOSELI FULL DAY
 Accommodation: Tortilis Camp
-Activity: Dawn game drive for best Kilimanjaro views before clouds build
-Highlight: Visit to Observation Hill — panoramic view of the entire Amboseli ecosystem
+Activity: Dawn game drive for best Kilimanjaro views
 Meals: All inclusive
 Est. Cost: Included
 
-─────────────────────────────────
-
-DAY 6 — AMBOSELI & RETURN TO NAIROBI
-Flight: Amboseli → Nairobi Wilson (45 min)
+DAY 6 - AMBOSELI AND RETURN TO NAIROBI
+Flight: Amboseli to Nairobi Wilson (45 min)
 Accommodation: Villa Rosa Kempinski, Nairobi
-Activity: Afternoon at leisure — optional visit to Karen Blixen Museum
 Dinner: Carnivore Restaurant, Nairobi
-Est. Cost: $280/night
+Est. Cost: $280 per night
 
-─────────────────────────────────
-
-DAY 7 — DEPARTURE
-Transfer: Villa Rosa Kempinski → JKIA Airport
+DAY 7 - DEPARTURE
+Transfer: Villa Rosa Kempinski to JKIA Airport
 Swafaris farewell gift: Kenya coffee and handcrafted Maasai bracelet
 
-─────────────────────────────────
-
 TRIP SUMMARY
-Total duration: 7 days / 6 nights
-Estimated total: $8,200 per person (flights, accommodation, all meals, game drives)
+Total duration: 7 days, 6 nights
+Estimated total: $8,200 per person
 Swafaris booking fee: Included
 Your Swafaris contact: Available 24/7 on WhatsApp throughout your trip`;
 
@@ -92,13 +73,13 @@ export default function Home() {
 
         <div className="mb-12">
           <div className="text-amber-500 text-xs font-medium tracking-widest uppercase mb-3">
-            Premium AI Travel · Kenya
+            Premium AI Travel - Kenya
           </div>
           <h1 className="text-5xl font-light text-stone-100 mb-4 tracking-wide">
             Swafaris
           </h1>
           <p className="text-stone-400 text-lg leading-relaxed">
-            Your brilliant Kenyan friend who knows every lodge, every hidden gem, every seasonal secret — and plans your entire trip perfectly.
+            Your brilliant Kenyan friend who knows every lodge, every hidden gem, every seasonal secret.
           </p>
         </div>
 
@@ -115,14 +96,14 @@ export default function Home() {
           />
           <div className="flex items-center justify-between mt-4 pt-4 border-t border-stone-800">
             <span className="text-stone-600 text-xs">
-              Powered by AI · 72 vetted Kenya properties
+              Powered by AI - 72 vetted Kenya properties
             </span>
             <button
               onClick={handleSubmit}
               disabled={loading}
-              className="bg-amber-600 hover:bg-amber-500 disabled:bg-stone-800 disabled:text-stone-600 text-white px-8 py-2.5 rounded-xl text-sm font-medium transition-all duration-200"
+              className="bg-amber-600 hover:bg-amber-500 disabled:bg-stone-800 disabled:text-stone-600 text-white px-8 py-2 rounded-xl text-sm font-medium transition-all duration-200"
             >
-              {loading ? "Crafting your itinerary..." : "Plan my trip →"}
+              {loading ? "Crafting your itinerary..." : "Plan my trip"}
             </button>
           </div>
         </div>
@@ -132,7 +113,7 @@ export default function Home() {
             <button
               key={s}
               onClick={() => setPrompt(s)}
-              className="text-xs text-stone-500 hover:text-stone-300 border border-stone-800 hover:border-stone-600 px-3 py-1.5 rounded-lg transition-colors"
+              className="text-xs text-stone-500 hover:text-stone-300 border border-stone-800 hover:border-stone-600 px-3 py-1 rounded-lg transition-colors"
             >
               {s}
             </button>
@@ -144,22 +125,22 @@ export default function Home() {
             <div className="px-6 py-4 border-b border-stone-800 flex items-center justify-between">
               <div>
                 <div className="text-stone-100 font-medium">Your Swafaris Itinerary</div>
-                <div className="text-stone-500 text-xs mt-0.5">Personalised for you · Ready to book</div>
+                <div className="text-stone-500 text-xs mt-0.5">Personalised for you - Ready to book</div>
               </div>
               <div className="w-2 h-2 rounded-full bg-amber-500"></div>
             </div>
             <div className="p-6">
-              <div className="text-stone-300 text-sm leading-relaxed whitespace-pre-wrap font-mono">
+              <div className="text-stone-300 text-sm leading-relaxed whitespace-pre-wrap">
                 {itinerary}
               </div>
             </div>
             <div className="px-6 py-4 border-t border-stone-800 flex gap-3">
               
-                href={`https://wa.me/254700000000?text=Hi, I would like to book this Swafaris trip: ${encodeURIComponent(prompt)}`}
+                href={"https://wa.me/254700000000?text=Hi, I would like to book this Swafaris trip: " + encodeURIComponent(prompt)}
                 target="_blank"
                 className="flex-1 bg-green-800 hover:bg-green-700 text-green-100 px-6 py-3 rounded-xl text-sm font-medium transition-colors text-center"
               >
-                Book via WhatsApp →
+                Book via WhatsApp
               </a>
               <button
                 onClick={() => setItinerary("")}

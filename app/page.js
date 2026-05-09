@@ -67,6 +67,11 @@ export default function Home() {
     setLoading(false);
   }
 
+  function handleWhatsApp() {
+    var url = "https://wa.me/254700000000?text=Hi, I would like to book this Swafaris trip: " + encodeURIComponent(prompt);
+    window.open(url, "_blank");
+  }
+
   return (
     <main className="min-h-screen bg-stone-950 flex flex-col items-center px-4 py-16">
       <div className="max-w-2xl w-full">
@@ -135,13 +140,12 @@ export default function Home() {
               </div>
             </div>
             <div className="px-6 py-4 border-t border-stone-800 flex gap-3">
-              
-                href={"https://wa.me/254700000000?text=Hi, I would like to book this Swafaris trip: " + encodeURIComponent(prompt)}
-                target="_blank"
+              <button
+                onClick={handleWhatsApp}
                 className="flex-1 bg-green-800 hover:bg-green-700 text-green-100 px-6 py-3 rounded-xl text-sm font-medium transition-colors text-center"
               >
                 Book via WhatsApp
-              </a>
+              </button>
               <button
                 onClick={() => setItinerary("")}
                 className="text-stone-500 hover:text-stone-300 border border-stone-800 px-4 py-3 rounded-xl text-sm transition-colors"

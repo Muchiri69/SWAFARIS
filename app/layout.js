@@ -8,8 +8,11 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata = {
-  title: "Swafaris - Premium AI Travel Kenya",
+  title: "Swafaris — Premium AI Travel Kenya",
   description: "Discover Kenya, your way.",
+  icons: {
+    icon: "/impala.png",
+  },
 };
 
 export default function RootLayout({ children }) {

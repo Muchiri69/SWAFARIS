@@ -73,40 +73,43 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-stone-950 flex flex-col items-center px-4 py-16">
+    <main style={{background: "#0a0f1e"}} className="min-h-screen flex flex-col items-center px-4 py-16">
       <div className="max-w-2xl w-full">
 
         <div className="mb-12">
-          <div className="text-amber-500 text-xs font-medium tracking-widest uppercase mb-3">
+          <div style={{color: "#c9a84c"}} className="text-xs font-medium tracking-widest uppercase mb-3">
             Premium AI Travel - Kenya
           </div>
-          <h1 className="text-5xl font-light text-stone-100 mb-4 tracking-wide">
+          <h1 style={{color: "#f5f0e8"}} className="text-6xl font-light mb-4 tracking-widest uppercase">
             Swafaris
           </h1>
-          <p className="text-stone-400 text-lg leading-relaxed">
-            Your brilliant Kenyan friend who knows every lodge, every hidden gem, every seasonal secret.
+          <div style={{background: "#c9a84c", height: "1px", width: "60px"}} className="mb-4"></div>
+          <p style={{color: "#8a9bb0"}} className="text-lg leading-relaxed">
+            Your brilliant Kenyan friend who knows every lodge, every hidden gem, every seasonal secret — and plans your entire trip perfectly.
           </p>
         </div>
 
-        <div className="bg-stone-900 rounded-2xl p-6 border border-stone-800 mb-4">
-          <div className="text-stone-500 text-xs uppercase tracking-widest mb-3">
+        <div style={{background: "#111827", border: "1px solid #1e3a5f"}} className="rounded-2xl p-6 mb-4">
+          <div style={{color: "#c9a84c"}} className="text-xs uppercase tracking-widest mb-3">
             Describe your dream trip
           </div>
           <textarea
-            className="w-full bg-transparent text-stone-100 placeholder-stone-600 text-base outline-none resize-none leading-relaxed"
+            style={{color: "#f5f0e8", background: "transparent"}}
+            className="w-full placeholder-gray-600 text-base outline-none resize-none leading-relaxed"
             rows={4}
             placeholder="2 people, 7 days, first safari, budget around $8,000. Love wildlife and a touch of luxury..."
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
           />
-          <div className="flex items-center justify-between mt-4 pt-4 border-t border-stone-800">
-            <span className="text-stone-600 text-xs">
-              Powered by AI - 72 vetted Kenya properties
+          <div style={{borderTop: "1px solid #1e3a5f"}} className="flex items-center justify-between mt-4 pt-4">
+            <span style={{color: "#4a6080"}} className="text-xs">
+              72 vetted Kenya properties
             </span>
             <button
               onClick={handleSubmit}
               disabled={loading}
-              className="bg-amber-600 hover:bg-amber-500 disabled:bg-stone-800 disabled:text-stone-600 text-white px-8 py-2 rounded-xl text-sm font-medium transition-all duration-200"
+              style={{background: loading ? "#1e3a5f" : "#c9a84c", color: loading ? "#4a6080" : "#0a0f1e"}}
+              className="px-8 py-2 rounded-xl text-sm font-semibold transition-all duration-200"
             >
               {loading ? "Crafting your itinerary..." : "Plan my trip"}
             </button>
@@ -118,7 +121,8 @@ export default function Home() {
             <button
               key={s}
               onClick={() => setPrompt(s)}
-              className="text-xs text-stone-500 hover:text-stone-300 border border-stone-800 hover:border-stone-600 px-3 py-1 rounded-lg transition-colors"
+              style={{color: "#8a9bb0", border: "1px solid #1e3a5f"}}
+              className="text-xs hover:opacity-80 px-3 py-1 rounded-lg transition-colors"
             >
               {s}
             </button>
@@ -126,29 +130,31 @@ export default function Home() {
         </div>
 
         {itinerary && (
-          <div className="bg-stone-900 rounded-2xl border border-stone-800 overflow-hidden">
-            <div className="px-6 py-4 border-b border-stone-800 flex items-center justify-between">
+          <div style={{background: "#111827", border: "1px solid #1e3a5f"}} className="rounded-2xl overflow-hidden">
+            <div style={{borderBottom: "1px solid #1e3a5f"}} className="px-6 py-4 flex items-center justify-between">
               <div>
-                <div className="text-stone-100 font-medium">Your Swafaris Itinerary</div>
-                <div className="text-stone-500 text-xs mt-0.5">Personalised for you - Ready to book</div>
+                <div style={{color: "#f5f0e8"}} className="font-medium">Your Swafaris Itinerary</div>
+                <div style={{color: "#4a6080"}} className="text-xs mt-0.5">Curated for you - Ready to book</div>
               </div>
-              <div className="w-2 h-2 rounded-full bg-amber-500"></div>
+              <div style={{background: "#c9a84c"}} className="w-2 h-2 rounded-full"></div>
             </div>
             <div className="p-6">
-              <div className="text-stone-300 text-sm leading-relaxed whitespace-pre-wrap">
+              <div style={{color: "#c8d8e8"}} className="text-sm leading-relaxed whitespace-pre-wrap">
                 {itinerary}
               </div>
             </div>
-            <div className="px-6 py-4 border-t border-stone-800 flex gap-3">
+            <div style={{borderTop: "1px solid #1e3a5f"}} className="px-6 py-4 flex gap-3">
               <button
                 onClick={handleWhatsApp}
-                className="flex-1 bg-green-800 hover:bg-green-700 text-green-100 px-6 py-3 rounded-xl text-sm font-medium transition-colors text-center"
+                style={{background: "#1a3a2a", color: "#4ade80"}}
+                className="flex-1 px-6 py-3 rounded-xl text-sm font-medium transition-colors text-center"
               >
                 Book via WhatsApp
               </button>
               <button
                 onClick={() => setItinerary("")}
-                className="text-stone-500 hover:text-stone-300 border border-stone-800 px-4 py-3 rounded-xl text-sm transition-colors"
+                style={{color: "#4a6080", border: "1px solid #1e3a5f"}}
+                className="px-4 py-3 rounded-xl text-sm transition-colors"
               >
                 Start over
               </button>
@@ -156,19 +162,19 @@ export default function Home() {
           </div>
         )}
 
-        <div className="mt-16 pt-8 border-t border-stone-900">
+        <div style={{borderTop: "1px solid #1e3a5f"}} className="mt-16 pt-8">
           <div className="grid grid-cols-3 gap-6 text-center">
             <div>
-              <div className="text-2xl font-light text-stone-100 mb-1">72</div>
-              <div className="text-stone-600 text-xs">Vetted properties</div>
+              <div style={{color: "#c9a84c"}} className="text-2xl font-light mb-1">72</div>
+              <div style={{color: "#4a6080"}} className="text-xs">Vetted properties</div>
             </div>
             <div>
-              <div className="text-2xl font-light text-stone-100 mb-1">18</div>
-              <div className="text-stone-600 text-xs">Kenya circuits</div>
+              <div style={{color: "#c9a84c"}} className="text-2xl font-light mb-1">18</div>
+              <div style={{color: "#4a6080"}} className="text-xs">Kenya circuits</div>
             </div>
             <div>
-              <div className="text-2xl font-light text-stone-100 mb-1">24/7</div>
-              <div className="text-stone-600 text-xs">Trip support</div>
+              <div style={{color: "#c9a84c"}} className="text-2xl font-light mb-1">24/7</div>
+              <div style={{color: "#4a6080"}} className="text-xs">Trip support</div>
             </div>
           </div>
         </div>

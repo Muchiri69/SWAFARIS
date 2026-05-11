@@ -151,18 +151,30 @@ export default function Home() {
           padding: "56px 24px"
         }}>
           <div style={{textAlign: "center", marginBottom: "48px"}}>
-            <img
-              src="/Impala.png"
-              alt="Swafaris"
-              style={{
-                width: "64px",
-                height: "64px",
-                objectFit: "contain",
-                margin: "0 auto 20px",
-                display: "block",
-                filter: "drop-shadow(0 4px 16px rgba(198,164,108,0.4))"
-              }}
-            />
+            <div style={{
+              width: "120px",
+              height: "120px",
+              borderRadius: "32px",
+              background: "rgba(198,164,108,0.06)",
+              border: "1px solid rgba(198,164,108,0.15)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              margin: "0 auto 24px",
+              backdropFilter: "blur(10px)"
+            }}>
+              <img
+                src="/Impala.png"
+                alt="Swafaris"
+                style={{
+                  width: "88px",
+                  height: "88px",
+                  objectFit: "contain",
+                  opacity: "0.75",
+                  filter: "drop-shadow(0 4px 20px rgba(198,164,108,0.3))"
+                }}
+              />
+            </div>
             <h2 style={{
               fontSize: "48px",
               fontWeight: "300",

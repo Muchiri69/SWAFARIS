@@ -427,19 +427,30 @@ export default function Home() {
         transform: loaded ? "translateY(0)" : "translateY(24px)",
         transition: "opacity 2s ease 0.8s, transform 2s ease 0.8s"
       }}>
-        <img
-          src="/logo.png"
-          alt="Swafaris"
-          style={{
-            width: "80px",
-            height: "80px",
-            objectFit: "contain",
-            margin: "0 auto 24px",
-            filter: "drop-shadow(0 4px 24px rgba(198,164,108,0.5))",
-            display: "block"
-          }}
-        />
-
+       <div style={{
+            width: "100px",
+            height: "100px",
+            borderRadius: "28px",
+            background: "rgba(198,164,108,0.08)",
+            border: "1px solid rgba(198,164,108,0.2)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            margin: "0 auto 28px",
+            backdropFilter: "blur(10px)",
+            boxShadow: "0 8px 32px rgba(198,164,108,0.15)"
+          }}>
+            <img
+              src="/logo.png"
+              alt="Swafaris"
+              style={{
+                width: "72px",
+                height: "72px",
+                objectFit: "contain",
+                filter: "drop-shadow(0 4px 24px rgba(198,164,108,0.6))"
+              }}
+            />
+          </div>
         <div style={{
           fontFamily: "var(--font-cormorant)",
           color: "#F5F1E8",

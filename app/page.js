@@ -80,6 +80,9 @@ export default function Home() {
       <div className="max-w-2xl w-full">
 
         <div className="mb-12">
+          <div className="flex items-center gap-4 mb-6">
+            <img src="/logo.png" alt="Swafaris" style={{width: "80px", height: "80px", objectFit: "contain"}} />
+          </div>
           <div style={{color: "#c9a84c"}} className="text-xs font-medium tracking-widest uppercase mb-4">
             Premium AI Travel - Kenya
           </div>

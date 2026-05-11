@@ -81,7 +81,7 @@ export default function Home() {
       <nav style={{borderBottom: "1px solid #1e3a5f"}} className="flex items-center justify-between px-8 py-4">
         <div className="flex items-center gap-3">
           <img src="/logo.png" alt="Swafaris" style={{width: "48px", height: "48px", objectFit: "contain"}} />
-          <span style={{color: "#c9a84c", letterSpacing: "0.2em", fontSize: "18px", fontWeight: "200"}} className="uppercase">
+          <span style={{color: "#c9a84c", letterSpacing: "0.15em", fontSize: "22px", fontWeight: "600"}} className="uppercase">
             Swafaris
           </span>
         </div>
@@ -94,16 +94,9 @@ export default function Home() {
         <div className="max-w-2xl w-full">
 
           <div className="text-center mb-8">
-            <h1 style={{
-              color: "#c9a84c",
-              fontWeight: "200",
-              fontSize: "52px",
-              letterSpacing: "0.15em",
-              textShadow: "0 0 40px rgba(201,168,76,0.3)",
-              lineHeight: "1"
-            }} className="uppercase mb-3">
-              Your Kenya Journey
-            </h1>
+            <p style={{color: "#a8bdd0", fontSize: "16px", letterSpacing: "0.05em"}} className="mb-3">
+              Plan your perfect Kenya trip with AI — curated, intelligent, premium.
+            </p>
             <div style={{background: "linear-gradient(90deg, transparent, #c9a84c, transparent)", height: "1px"}} className="mb-4"></div>
             <p style={{color: "#a8bdd0"}} className="text-base leading-relaxed">
               Tell us your dream trip. Our AI plans it perfectly — the right lodge, the right moment, the right experience.

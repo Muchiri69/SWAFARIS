@@ -70,15 +70,22 @@ Investment: $8,200 per person
 Includes: All flights, accommodation, meals, game drives
 Swafaris support: 24/7 WhatsApp throughout your trip`;
 
+const slides = ["/hero.jpg", "/hero2.jpg"];
+
 export default function Home() {
   const [showPlanner, setShowPlanner] = useState(false);
   const [prompt, setPrompt] = useState("");
   const [itinerary, setItinerary] = useState("");
   const [loading, setLoading] = useState(false);
   const [loaded, setLoaded] = useState(false);
+  const [slide, setSlide] = useState(0);
 
   useEffect(() => {
     setTimeout(() => setLoaded(true), 150);
+    const interval = setInterval(() => {
+      setSlide((s) => (s === 0 ? 1 : 0));
+    }, 6000);
+    return () => clearInterval(interval);
   }, []);
 
   async function handleSubmit() {
@@ -109,7 +116,7 @@ export default function Home() {
           backgroundImage: "url('/hero2.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          opacity: 0.06,
+          opacity: 0.07,
           filter: "saturate(0.5)"
         }}></div>
 
@@ -126,7 +133,7 @@ export default function Home() {
             onClick={() => { setShowPlanner(false); setItinerary(""); setPrompt(""); }}
             style={{background: "none", border: "none", cursor: "pointer", display: "flex", alignItems: "center", gap: "12px"}}
           >
-            <img src="/impala.png" alt="Swafaris" style={{width: "36px", height: "36px", objectFit: "contain"}} />
+            <img src="/logo.png" alt="Swafaris" style={{width: "36px", height: "36px", objectFit: "contain"}} />
             <span style={{color: "#C6A46C", fontSize: "16px", letterSpacing: "0.2em", fontWeight: "600"}} className="uppercase">
               Swafaris
             </span>
@@ -388,21 +395,27 @@ export default function Home() {
 
   return (
     <main style={{minHeight: "100vh", position: "relative", overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center"}}>
-      <div style={{
-        position: "absolute",
-        inset: 0,
-        backgroundImage: "url('/hero2.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        opacity: loaded ? 1 : 0,
-        transition: "opacity 2.5s ease",
-        filter: "saturate(0.9) brightness(0.7)"
-      }}></div>
+
+      {slides.map((src, i) => (
+        <div
+          key={src}
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundImage: "url('" + src + "')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            opacity: loaded && slide === i ? 1 : 0,
+            transition: "opacity 1.8s ease",
+            filter: "saturate(0.9) brightness(0.65)"
+          }}
+        ></div>
+      ))}
 
       <div style={{
         position: "absolute",
         inset: 0,
-        background: "linear-gradient(to bottom, rgba(15,23,32,0.4) 0%, rgba(15,23,32,0.2) 40%, rgba(15,23,32,0.75) 100%)"
+        background: "linear-gradient(to bottom, rgba(15,23,32,0.4) 0%, rgba(15,23,32,0.15) 40%, rgba(15,23,32,0.8) 100%)"
       }}></div>
 
       <div style={{
@@ -415,7 +428,7 @@ export default function Home() {
         transition: "opacity 2s ease 0.8s, transform 2s ease 0.8s"
       }}>
         <img
-          src="/impala.png"
+          src="/logo.png"
           alt="Swafaris"
           style={{
             width: "80px",
@@ -508,6 +521,23 @@ export default function Home() {
                 fontFamily: "sans-serif"
               }} className="uppercase">{label}</div>
             </div>
+          ))}
+        </div>
+
+        <div style={{marginTop: "40px", display: "flex", gap: "8px", justifyContent: "center"}}>
+          {slides.map((_, i) => (
+            <div
+              key={i}
+              style={{
+                width: slide === i ? "24px" : "6px",
+                height: "2px",
+                background: slide === i ? "#C6A46C" : "rgba(198,164,108,0.3)",
+                borderRadius: "2px",
+                transition: "all 0.4s ease",
+                cursor: "pointer"
+              }}
+              onClick={() => setSlide(i)}
+            ></div>
           ))}
         </div>
       </div>

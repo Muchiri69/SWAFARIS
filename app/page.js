@@ -76,159 +76,167 @@ export default function Home() {
   }
 
   return (
-    <main style={{background: "#080d1a"}} className="min-h-screen flex flex-col items-center px-4 py-16">
-      <div className="max-w-2xl w-full">
+    <main style={{background: "#080d1a"}} className="min-h-screen flex flex-col">
 
-        <div className="mb-12">
-          <div className="flex items-center gap-4 mb-6">
-            <img src="/logo.png" alt="Swafaris" style={{width: "80px", height: "80px", objectFit: "contain"}} />
-          </div>
-          <div style={{color: "#c9a84c"}} className="text-xs font-medium tracking-widest uppercase mb-4">
-            Premium AI Travel - Kenya
-          </div>
-          <h1 style={{
-            color: "#c9a84c",
-            fontWeight: "200",
-            fontSize: "72px",
-            letterSpacing: "0.2em",
-            lineHeight: "1",
-            textShadow: "0 0 40px rgba(201,168,76,0.3)"
-          }} className="mb-4 uppercase">
+      <nav style={{borderBottom: "1px solid #1e3a5f"}} className="flex items-center justify-between px-8 py-4">
+        <div className="flex items-center gap-3">
+          <img src="/logo.png" alt="Swafaris" style={{width: "48px", height: "48px", objectFit: "contain"}} />
+          <span style={{color: "#c9a84c", letterSpacing: "0.2em", fontSize: "18px", fontWeight: "200"}} className="uppercase">
             Swafaris
-          </h1>
-          <div style={{background: "linear-gradient(90deg, #c9a84c, transparent)", height: "1px", width: "120px"}} className="mb-5"></div>
-          <p style={{color: "#a8bdd0"}} className="text-lg leading-relaxed">
-            Your brilliant Kenyan friend who knows every lodge, every hidden gem, every seasonal secret — and plans your entire trip perfectly.
-          </p>
+          </span>
         </div>
+        <div style={{color: "#3a5070"}} className="text-xs tracking-widest uppercase">
+          Premium AI Travel - Kenya
+        </div>
+      </nav>
 
-        <div style={{background: "#0d1525", border: "1px solid #1e3a5f"}} className="rounded-2xl p-6 mb-4">
-          <div style={{color: "#c9a84c"}} className="text-xs uppercase tracking-widest mb-3">
-            Describe your dream trip
+      <div className="flex-1 flex flex-col items-center justify-center px-4 py-8">
+        <div className="max-w-2xl w-full">
+
+          <div className="text-center mb-8">
+            <h1 style={{
+              color: "#c9a84c",
+              fontWeight: "200",
+              fontSize: "52px",
+              letterSpacing: "0.15em",
+              textShadow: "0 0 40px rgba(201,168,76,0.3)",
+              lineHeight: "1"
+            }} className="uppercase mb-3">
+              Your Kenya Journey
+            </h1>
+            <div style={{background: "linear-gradient(90deg, transparent, #c9a84c, transparent)", height: "1px"}} className="mb-4"></div>
+            <p style={{color: "#a8bdd0"}} className="text-base leading-relaxed">
+              Tell us your dream trip. Our AI plans it perfectly — the right lodge, the right moment, the right experience.
+            </p>
           </div>
-          <textarea
-            style={{color: "#f0ead8", background: "transparent"}}
-            className="w-full placeholder-gray-600 text-base outline-none resize-none leading-relaxed"
-            rows={4}
-            placeholder="2 people, 7 days, first safari, budget around $8,000. Love wildlife and a touch of luxury..."
-            value={prompt}
-            onChange={(e) => setPrompt(e.target.value)}
-          />
-          <div style={{borderTop: "1px solid #1e3a5f"}} className="flex items-center justify-between mt-4 pt-4">
-            <span style={{color: "#3a5070"}} className="text-xs">
-              72 vetted Kenya properties
-            </span>
-            <button
-              onClick={handleSubmit}
-              disabled={loading}
-              onMouseEnter={() => setHoverMain(true)}
-              onMouseLeave={() => setHoverMain(false)}
-              style={{
-                background: loading ? "#1e3a5f" : hoverMain ? "#e8c86a" : "#c9a84c",
-                color: loading ? "#4a6080" : "#080d1a",
-                boxShadow: hoverMain && !loading ? "0 0 20px rgba(201,168,76,0.5)" : "none",
-                transform: hoverMain && !loading ? "scale(1.03)" : "scale(1)",
-                transition: "all 0.2s ease"
-              }}
-              className="px-8 py-2.5 rounded-xl text-sm font-semibold"
-            >
-              {loading ? "Crafting your itinerary..." : "Plan my trip"}
-            </button>
-          </div>
-        </div>
 
-        <div className="flex gap-3 mb-12">
-          {["Honeymoon safari", "Family adventure", "Corporate retreat"].map((s) => (
-            <button
-              key={s}
-              onClick={() => setPrompt(s)}
-              style={{
-                color: "#7a8fa8",
-                border: "1px solid #1e3a5f",
-                transition: "all 0.2s ease"
-              }}
-              onMouseEnter={(e) => {
-                e.target.style.color = "#c9a84c";
-                e.target.style.borderColor = "#c9a84c";
-                e.target.style.boxShadow = "0 0 12px rgba(201,168,76,0.3)";
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.color = "#7a8fa8";
-                e.target.style.borderColor = "#1e3a5f";
-                e.target.style.boxShadow = "none";
-              }}
-              className="text-xs px-3 py-1.5 rounded-lg"
-            >
-              {s}
-            </button>
-          ))}
-        </div>
-
-        {itinerary && (
-          <div style={{background: "#0d1525", border: "1px solid #1e3a5f"}} className="rounded-2xl overflow-hidden">
-            <div style={{borderBottom: "1px solid #1e3a5f"}} className="px-6 py-4 flex items-center justify-between">
-              <div>
-                <div style={{color: "#e8dfc8"}} className="font-medium">Your Swafaris Itinerary</div>
-                <div style={{color: "#3a5070"}} className="text-xs mt-0.5">Curated for you - Ready to book</div>
-              </div>
-              <div style={{background: "#c9a84c", boxShadow: "0 0 10px rgba(201,168,76,0.5)"}} className="w-2 h-2 rounded-full"></div>
+          <div style={{background: "#0d1525", border: "1px solid #1e3a5f"}} className="rounded-2xl p-5 mb-3">
+            <div style={{color: "#c9a84c"}} className="text-xs uppercase tracking-widest mb-2">
+              Describe your dream trip
             </div>
-            <div className="p-6">
-              <div style={{color: "#d4e4f0"}} className="text-sm leading-relaxed whitespace-pre-wrap">
-                {itinerary}
-              </div>
-            </div>
-            <div style={{borderTop: "1px solid #1e3a5f"}} className="px-6 py-4 flex gap-3">
+            <textarea
+              style={{color: "#e8dfc8", background: "transparent"}}
+              className="w-full placeholder-gray-600 text-sm outline-none resize-none leading-relaxed"
+              rows={3}
+              placeholder="2 people, 7 days, first safari, budget around $8,000. Love wildlife and a touch of luxury..."
+              value={prompt}
+              onChange={(e) => setPrompt(e.target.value)}
+            />
+            <div style={{borderTop: "1px solid #1e3a5f"}} className="flex items-center justify-between mt-3 pt-3">
+              <span style={{color: "#3a5070"}} className="text-xs">
+                72 vetted Kenya properties
+              </span>
               <button
-                onClick={handleWhatsApp}
-                onMouseEnter={() => setHoverWA(true)}
-                onMouseLeave={() => setHoverWA(false)}
+                onClick={handleSubmit}
+                disabled={loading}
+                onMouseEnter={() => setHoverMain(true)}
+                onMouseLeave={() => setHoverMain(false)}
                 style={{
-                  background: hoverWA ? "#1e4a2e" : "#152a1e",
-                  color: "#4ade80",
-                  boxShadow: hoverWA ? "0 0 16px rgba(74,222,128,0.3)" : "none",
+                  background: loading ? "#1e3a5f" : hoverMain ? "#e8c86a" : "#c9a84c",
+                  color: loading ? "#4a6080" : "#080d1a",
+                  boxShadow: hoverMain && !loading ? "0 0 20px rgba(201,168,76,0.5)" : "none",
+                  transform: hoverMain && !loading ? "scale(1.03)" : "scale(1)",
                   transition: "all 0.2s ease"
                 }}
-                className="flex-1 px-6 py-3 rounded-xl text-sm font-medium text-center"
+                className="px-6 py-2 rounded-xl text-sm font-semibold"
               >
-                Book via WhatsApp
-              </button>
-              <button
-                onClick={() => setItinerary("")}
-                onMouseEnter={() => setHoverReset(true)}
-                onMouseLeave={() => setHoverReset(false)}
-                style={{
-                  color: hoverReset ? "#c9a84c" : "#4a6080",
-                  border: hoverReset ? "1px solid #c9a84c" : "1px solid #1e3a5f",
-                  boxShadow: hoverReset ? "0 0 12px rgba(201,168,76,0.2)" : "none",
-                  transition: "all 0.2s ease"
-                }}
-                className="px-4 py-3 rounded-xl text-sm"
-              >
-                Start over
+                {loading ? "Crafting your itinerary..." : "Plan my trip"}
               </button>
             </div>
           </div>
-        )}
 
-        <div style={{borderTop: "1px solid #1e3a5f"}} className="mt-16 pt-8">
-          <div className="grid grid-cols-3 gap-6 text-center">
-            <div>
-              <div style={{color: "#c9a84c"}} className="text-2xl font-light mb-1">72</div>
-              <div style={{color: "#3a5070"}} className="text-xs">Vetted properties</div>
-            </div>
-            <div>
-              <div style={{color: "#c9a84c"}} className="text-2xl font-light mb-1">18</div>
-              <div style={{color: "#3a5070"}} className="text-xs">Kenya circuits</div>
-            </div>
-            <div>
-              <div style={{color: "#c9a84c"}} className="text-2xl font-light mb-1">24/7</div>
-              <div style={{color: "#3a5070"}} className="text-xs">Trip support</div>
-            </div>
+          <div className="flex gap-3 mb-4">
+            {["Honeymoon safari", "Family adventure", "Corporate retreat"].map((s) => (
+              <button
+                key={s}
+                onClick={() => setPrompt(s)}
+                style={{color: "#7a8fa8", border: "1px solid #1e3a5f", transition: "all 0.2s ease"}}
+                onMouseEnter={(e) => {
+                  e.target.style.color = "#c9a84c";
+                  e.target.style.borderColor = "#c9a84c";
+                  e.target.style.boxShadow = "0 0 12px rgba(201,168,76,0.3)";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.color = "#7a8fa8";
+                  e.target.style.borderColor = "#1e3a5f";
+                  e.target.style.boxShadow = "none";
+                }}
+                className="text-xs px-3 py-1.5 rounded-lg"
+              >
+                {s}
+              </button>
+            ))}
           </div>
-        </div>
 
+          {itinerary && (
+            <div style={{background: "#0d1525", border: "1px solid #1e3a5f"}} className="rounded-2xl overflow-hidden">
+              <div style={{borderBottom: "1px solid #1e3a5f"}} className="px-6 py-3 flex items-center justify-between">
+                <div>
+                  <div style={{color: "#f0ead8"}} className="font-medium text-sm">Your Swafaris Itinerary</div>
+                  <div style={{color: "#3a5070"}} className="text-xs mt-0.5">Curated for you - Ready to book</div>
+                </div>
+                <div style={{background: "#c9a84c", boxShadow: "0 0 10px rgba(201,168,76,0.5)"}} className="w-2 h-2 rounded-full"></div>
+              </div>
+              <div className="p-6 max-h-64 overflow-y-auto">
+                <div style={{color: "#d4e4f0"}} className="text-sm leading-relaxed whitespace-pre-wrap">
+                  {itinerary}
+                </div>
+              </div>
+              <div style={{borderTop: "1px solid #1e3a5f"}} className="px-6 py-3 flex gap-3">
+                <button
+                  onClick={handleWhatsApp}
+                  onMouseEnter={() => setHoverWA(true)}
+                  onMouseLeave={() => setHoverWA(false)}
+                  style={{
+                    background: hoverWA ? "#1e4a2e" : "#152a1e",
+                    color: "#4ade80",
+                    boxShadow: hoverWA ? "0 0 16px rgba(74,222,128,0.3)" : "none",
+                    transition: "all 0.2s ease"
+                  }}
+                  className="flex-1 px-6 py-2.5 rounded-xl text-sm font-medium text-center"
+                >
+                  Book via WhatsApp
+                </button>
+                <button
+                  onClick={() => setItinerary("")}
+                  onMouseEnter={() => setHoverReset(true)}
+                  onMouseLeave={() => setHoverReset(false)}
+                  style={{
+                    color: hoverReset ? "#c9a84c" : "#4a6080",
+                    border: hoverReset ? "1px solid #c9a84c" : "1px solid #1e3a5f",
+                    boxShadow: hoverReset ? "0 0 12px rgba(201,168,76,0.2)" : "none",
+                    transition: "all 0.2s ease"
+                  }}
+                  className="px-4 py-2.5 rounded-xl text-sm"
+                >
+                  Start over
+                </button>
+              </div>
+            </div>
+          )}
+
+          {!itinerary && (
+            <div style={{borderTop: "1px solid #1e3a5f"}} className="mt-6 pt-6">
+              <div className="grid grid-cols-3 gap-6 text-center">
+                <div>
+                  <div style={{color: "#c9a84c"}} className="text-xl font-light mb-1">72</div>
+                  <div style={{color: "#3a5070"}} className="text-xs">Vetted properties</div>
+                </div>
+                <div>
+                  <div style={{color: "#c9a84c"}} className="text-xl font-light mb-1">18</div>
+                  <div style={{color: "#3a5070"}} className="text-xs">Kenya circuits</div>
+                </div>
+                <div>
+                  <div style={{color: "#c9a84c"}} className="text-xl font-light mb-1">24/7</div>
+                  <div style={{color: "#3a5070"}} className="text-xs">Trip support</div>
+                </div>
+              </div>
+            </div>
+          )}
+
+        </div>
       </div>
+
     </main>
   );
 }

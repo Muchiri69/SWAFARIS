@@ -151,6 +151,18 @@ export default function Home() {
           padding: "56px 24px"
         }}>
           <div style={{textAlign: "center", marginBottom: "48px"}}>
+            <img
+              src="/Impala.png"
+              alt="Swafaris"
+              style={{
+                width: "64px",
+                height: "64px",
+                objectFit: "contain",
+                margin: "0 auto 20px",
+                display: "block",
+                filter: "drop-shadow(0 4px 16px rgba(198,164,108,0.4))"
+              }}
+            />
             <h2 style={{
               fontSize: "48px",
               fontWeight: "300",

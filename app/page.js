@@ -94,7 +94,7 @@ export default function Home() {
             Swafaris
           </h1>
           <div style={{background: "linear-gradient(90deg, #c9a84c, transparent)", height: "1px", width: "120px"}} className="mb-5"></div>
-          <p style={{color: "#7a8fa8"}} className="text-lg leading-relaxed">
+          <p style={{color: "#a8bdd0"}} className="text-lg leading-relaxed">
             Your brilliant Kenyan friend who knows every lodge, every hidden gem, every seasonal secret — and plans your entire trip perfectly.
           </p>
         </div>
@@ -165,13 +165,13 @@ export default function Home() {
           <div style={{background: "#0d1525", border: "1px solid #1e3a5f"}} className="rounded-2xl overflow-hidden">
             <div style={{borderBottom: "1px solid #1e3a5f"}} className="px-6 py-4 flex items-center justify-between">
               <div>
-                <div style={{color: "#f0ead8"}} className="font-medium">Your Swafaris Itinerary</div>
+                <div style={{color: "#e8dfc8"}} className="font-medium">Your Swafaris Itinerary</div>
                 <div style={{color: "#3a5070"}} className="text-xs mt-0.5">Curated for you - Ready to book</div>
               </div>
               <div style={{background: "#c9a84c", boxShadow: "0 0 10px rgba(201,168,76,0.5)"}} className="w-2 h-2 rounded-full"></div>
             </div>
             <div className="p-6">
-              <div style={{color: "#b8ccd8"}} className="text-sm leading-relaxed whitespace-pre-wrap">
+              <div style={{color: "#d4e4f0"}} className="text-sm leading-relaxed whitespace-pre-wrap">
                 {itinerary}
               </div>
             </div>

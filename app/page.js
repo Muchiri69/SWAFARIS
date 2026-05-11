@@ -168,7 +168,7 @@ export default function Home() {
                 alt="Swafaris"
                 style={{
                   width: "88px",
-                  height: "88px",
+                  height: "59px",
                   objectFit: "contain",
                   opacity: "0.75",
                   filter: "drop-shadow(0 4px 20px rgba(198,164,108,0.3))"

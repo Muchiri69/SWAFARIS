@@ -71,7 +71,7 @@ export default function Home() {
   }
 
   function handleWhatsApp() {
-    var url = "https://wa.me/254700000000?text=Hi, I would like to book this Swafaris trip: " + encodeURIComponent(prompt);
+    var url = "https://wa.me/254768711000?text=Hi, I would like to book this Swafaris trip: " + encodeURIComponent(prompt);
     window.open(url, "_blank");
   }
 

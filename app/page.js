@@ -94,11 +94,29 @@ export default function Home() {
         <div className="max-w-2xl w-full">
 
           <div className="text-center mb-8">
-            <p style={{color: "#a8bdd0", fontSize: "16px", letterSpacing: "0.05em"}} className="mb-3">
-              Plan your perfect Kenya trip with AI — curated, intelligent, premium.
-            </p>
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 10 C50 10 30 20 25 35 C20 50 30 55 35 60 C30 65 20 70 15 85 L25 85 C28 75 35 70 40 68 C43 72 47 75 50 75 C53 75 57 72 60 68 C65 70 72 75 75 85 L85 85 C80 70 70 65 65 60 C70 55 80 50 75 35 C70 20 50 10 50 10Z" fill="#c9a84c" opacity="0.9"/>
+                <path d="M50 10 C50 10 55 25 60 30 C65 35 70 32 75 35 C70 20 50 10 50 10Z" fill="#c9a84c"/>
+                <line x1="35" y1="85" x2="33" y2="95" stroke="#c9a84c" strokeWidth="3" strokeLinecap="round"/>
+                <line x1="45" y1="85" x2="43" y2="95" stroke="#c9a84c" strokeWidth="3" strokeLinecap="round"/>
+                <line x1="55" y1="85" x2="57" y2="95" stroke="#c9a84c" strokeWidth="3" strokeLinecap="round"/>
+                <line x1="65" y1="85" x2="67" y2="95" stroke="#c9a84c" strokeWidth="3" strokeLinecap="round"/>
+              </svg>
+              <h2 style={{
+                fontFamily: "var(--font-cormorant)",
+                color: "#c9a84c",
+                fontSize: "42px",
+                fontWeight: "300",
+                letterSpacing: "0.08em",
+                textShadow: "0 0 30px rgba(201,168,76,0.4)",
+                lineHeight: "1"
+              }}>
+                Discover Kenya, your way.
+              </h2>
+            </div>
             <div style={{background: "linear-gradient(90deg, transparent, #c9a84c, transparent)", height: "1px"}} className="mb-4"></div>
-            <p style={{color: "#a8bdd0"}} className="text-base leading-relaxed">
+            <p style={{color: "#a8bdd0", fontSize: "14px"}} className="leading-relaxed">
               Tell us your dream trip. Our AI plans it perfectly — the right lodge, the right moment, the right experience.
             </p>
           </div>

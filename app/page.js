@@ -134,7 +134,25 @@ export default function Home() {
             style={{background: "none", border: "none", cursor: "pointer", display: "flex", alignItems: "center", gap: "12px"}}
           >
             <img src="/logo.png" alt="Swafaris" style={{width: "36px", height: "36px", objectFit: "contain"}} />
-            <span style={{color: "#C6A46C", fontSize: "16px", letterSpacing: "0.2em", fontWeight: "600"}} className="uppercase">
+            <span
+              style={{
+                color: "#C6A46C",
+                fontSize: "16px",
+                letterSpacing: "0.2em",
+                fontWeight: "600",
+                transition: "all 0.3s ease",
+                textShadow: "none"
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.textShadow = "0 0 20px rgba(198,164,108,0.8)";
+                e.target.style.color = "#d4b87a";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.textShadow = "none";
+                e.target.style.color = "#C6A46C";
+              }}
+              className="uppercase"
+            >
               Swafaris
             </span>
           </button>
@@ -151,30 +169,29 @@ export default function Home() {
           padding: "56px 24px"
         }}>
           <div style={{textAlign: "center", marginBottom: "48px"}}>
-            <div style={{
-              width: "120px",
-              height: "120px",
-              borderRadius: "32px",
-              background: "rgba(198,164,108,0.06)",
-              border: "1px solid rgba(198,164,108,0.15)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              margin: "0 auto 24px",
-              backdropFilter: "blur(10px)"
-            }}>
-              <img
-                src="/Impala.png"
-                alt="Swafaris"
-                style={{
-                  width: "88px",
-                  height: "59px",
-                  objectFit: "contain",
-                  opacity: "0.75",
-                  filter: "drop-shadow(0 4px 20px rgba(198,164,108,0.3))"
-                }}
-              />
-            </div>
+            <img
+              src="/Impala.png"
+              alt="Swafaris"
+              style={{
+                width: "100px",
+                height: "100px",
+                objectFit: "contain",
+                borderRadius: "24px",
+                opacity: "0.8",
+                margin: "0 auto 24px",
+                display: "block",
+                filter: "drop-shadow(0 4px 20px rgba(198,164,108,0.3))",
+                transition: "all 0.3s ease"
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.opacity = "1";
+                e.target.style.filter = "drop-shadow(0 0 20px rgba(198,164,108,0.8))";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.opacity = "0.8";
+                e.target.style.filter = "drop-shadow(0 4px 20px rgba(198,164,108,0.3))";
+              }}
+            />
             <h2 style={{
               fontSize: "48px",
               fontWeight: "300",
